@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
 apply plugin: 'android-apt'
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 25
