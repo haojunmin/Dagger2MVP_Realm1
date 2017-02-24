@@ -54,14 +54,25 @@ public class Book extends RealmObject {
     }
 
     public String getDetails() {
-        String details = "";
-        details += getAuthorFullName();
-        details += " | ";
-        details += getPublisher().getName();
-        return details;
+        StringBuilder details = new StringBuilder();
+        details.append(getAuthorFullName());
+        details.append(" | ");
+        details.append(getPublisher().getName());
+        return details.toString();
     }
 
     public String getAuthorFullName() {
         return String.format("%s %s", getAuthor().getName(), getAuthor().getLastname());
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                ", publisher=" + publisher +
+                '}';
     }
 }
