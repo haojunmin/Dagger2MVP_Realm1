@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.SupportActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -30,9 +31,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     private Unbinder mUnbinder;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(getLayout());
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+         setContentView(getLayout());
         mUnbinder = ButterKnife.bind(this);
         mContext = this;
         initInject();
