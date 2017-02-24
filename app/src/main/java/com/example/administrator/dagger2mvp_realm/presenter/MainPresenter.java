@@ -24,6 +24,7 @@ public class MainPresenter extends RxPresenter<MainContact.View> implements Main
     @Override
     public void addBook(String title, String author, String isbn, String publisher) {
         mRealmService.addBookAsync(title, author, isbn, publisher);
+        mView.addSucess();
     }
 
     @Override
@@ -33,6 +34,10 @@ public class MainPresenter extends RxPresenter<MainContact.View> implements Main
         while (iterator.hasNext()) {
             builder.append(iterator.next().toString());
         }
-        return builder.toString() ;
+        return builder.toString();
+    }
+
+    public void closeRealm() {
+        mRealmService.closeRealm();
     }
 }
