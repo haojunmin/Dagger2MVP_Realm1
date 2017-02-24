@@ -1,1 +1,1 @@
-# Dagger2MVP_Realm-
+这是一个使用MVP架构，加上Dagger2，来操作Realm数据库，供大家参考
