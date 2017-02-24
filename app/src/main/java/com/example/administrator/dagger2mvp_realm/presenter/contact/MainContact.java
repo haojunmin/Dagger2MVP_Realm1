@@ -10,6 +10,7 @@ import com.example.administrator.dagger2mvp_realm.base.BaseView;
 public interface MainContact {
     interface View extends BaseView {
 
+        void addSucess();
 
     }
 
