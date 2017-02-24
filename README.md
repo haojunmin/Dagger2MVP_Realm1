@@ -9,6 +9,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 apply plugin: 'android-apt'
 apply plugin: 'com.neenbedankt.android-apt'
+
+
+
 Yet this worked (note how real-android is last).
 
 apply plugin: 'com.android.application'
