@@ -28,10 +28,10 @@ public class RealmService {
             @Override
             public void execute(Realm realm) {
                 Book book = mRealm.createObject(Book.class);
-                book.setId(realm.where(Book.class).findAll().size());
+                //  book.setId(realm.where(Book.class).findAll().size());
                 book.setTitle(title);
-                book.setAuthor(createOrGetAuthor(author, book, realm));
-                book.setPublisher(createOrGetPublisher(publisher, book, realm));
+                //book.setAuthor(createOrGetAuthor(author, book, realm));
+                // book.setPublisher(createOrGetPublisher(publisher, book, realm));
                 book.setIsbn(isbn);
             }
         });
@@ -81,6 +81,10 @@ public class RealmService {
 
     private Publisher getPublisher(final String publisher, final Realm realm) {
         return realm.where(Publisher.class).equalTo("name", publisher).findFirst();
+    }
+
+    public void closeRealm() {
+        mRealm.close();
     }
 
     public interface OnTransactionCallback {
